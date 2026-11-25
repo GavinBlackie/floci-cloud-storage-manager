@@ -1,3 +1,5 @@
+(Disclaimer: This was the given MD file describing the lab, so all credit goes to my Professor and Sheridan!!)
+
 # Stockroom — local inventory management
 
 A small inventory management system with a live dashboard, implemented in Flask and boto3. It runs against **Floci**, which emulates the AWS services locally so the experiment does not need an AWS account or cloud resources.
