@@ -1,0 +1,5 @@
+Welcome to the Floci Cloud Storage Project.
+This file is being uploaded using Python and Boto3.
+Amazon S3 provides scalable object storage,
+allowing for many types of files to be uploaded and
+deleted - including text, documents, audio, video, and more!

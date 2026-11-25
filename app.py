@@ -5,6 +5,13 @@ def main():
     storage = S3Manager()
     storage.create_bucket()
 
+    # Upload the sample file
+    storage.upload_file(
+        "uploads/sample.txt",
+        "documents/sample.txt"
+    )
+
+
 if __name__ == "__main__":
 
     main()
