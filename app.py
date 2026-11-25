@@ -11,7 +11,14 @@ def main():
         "documents/sample.txt"
     )
 
+    # list all the files!!
     storage.list_files()
+
+    # download the sample text file
+    storage.download_file(
+        "documents/sample.txt",
+        "downloads/sample_downloaded.txt"
+    )
 
 
 if __name__ == "__main__":

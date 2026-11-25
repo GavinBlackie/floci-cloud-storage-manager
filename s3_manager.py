@@ -83,3 +83,14 @@ class S3Manager:
         except Exception as e:
             print("Error listing files: ", e)
 
+    def download_file(self, object_name : str, download_path : str):
+        try:
+            self.s3.download_file(
+                self.bucket_name,
+                object_name,
+                download_path
+            )
+
+            print(f"Downloaded Successfully: {download_path}")
+        except Exception as e:
+            print("Download failed: ", e)
