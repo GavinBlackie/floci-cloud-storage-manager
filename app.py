@@ -11,6 +11,8 @@ def main():
         "documents/sample.txt"
     )
 
+    storage.list_files()
+
 
 if __name__ == "__main__":
 
