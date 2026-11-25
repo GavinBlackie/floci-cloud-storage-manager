@@ -20,6 +20,14 @@ def main():
         "downloads/sample_downloaded.txt"
     )
 
+    # View infomation about the file!!
+    storage.file_information(
+        "documents/sample.txt"
+    )
+
+    # delete the sample file
+    storage.delete_file("documents/sample.txt")
+
 
 if __name__ == "__main__":
 

@@ -83,6 +83,7 @@ class S3Manager:
         except Exception as e:
             print("Error listing files: ", e)
 
+    # Download a file based on a given path
     def download_file(self, object_name : str, download_path : str):
         try:
             self.s3.download_file(
@@ -94,3 +95,33 @@ class S3Manager:
             print(f"Downloaded Successfully: {download_path}")
         except Exception as e:
             print("Download failed: ", e)
+
+    # Delete a file based on its name
+    def delete_file(self, object_name):
+        try:
+            self.s3.delete_object(
+                Bucket=self.bucket_name,
+                Key=object_name
+            )
+            print(f"Deleted Successfully: {object_name}")
+        except Exception as e:
+            print("Delete failed: ", e)
+
+    # Display File Info:
+    def file_information(self, object_name):
+        try:
+            # Search and recieve a response object from s3
+            response = self.s3.head_object(
+                Bucket=self.bucket_name,
+                Key=object_name
+            )
+
+            print("\nFile Information")
+            print("----------------------")
+            print("Name: ", object_name)
+            print("Size: ", response["ContentLength"], "bytes")
+            print("Content Type: ", response.get("ContentType"))
+            print("Last Modified: ", response["LastModified"])
+
+        except Exception as e:
+            print("Unalbe to retrieve file information: ", e)
